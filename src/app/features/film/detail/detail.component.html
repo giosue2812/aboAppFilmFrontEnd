@@ -1,13 +1,11 @@
-<div class="card mb-3" style="max-width: 100%">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{detail|json}}</h5>
-        <p class="card-text"></p>
-        <a routerLink="../detail" class="btn btn-primary">Detail</a>
-      </div>
-    </div>
+<div class="card mb-3">
+  <youtube-player class="card-img-top p-3" style="margin-left: 110px !important;" videoId="{{detail.bande_annoce}}">
+  </youtube-player>
+  <div class="card-body">
+    <h5 class="card-title">{{detail.titre}}</h5>
+    <p class="card-text">Date de sortie : {{detail.date_sortie|date:'d-MM-yyyy'}}</p>
+    <p class="card-text">Casting : {{detail.personnes[0].nom}} {{detail.personnes[0].prenom}}</p>
+    <p class="card-text">Realisateur : {{detail.realisateurs.nom}} {{detail.realisateurs.prenom}}</p>
   </div>
 </div>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {FilmService} from '../../../core/services/film/film.service';
 import {ActivatedRoute} from '@angular/router';
@@ -11,8 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class DetailComponent implements OnInit {
 
   detailSuscription: Subscription;
-
-  detail: string;
+  detail: any;
 
   constructor(private filmService: FilmService, private router: ActivatedRoute) { }
 
@@ -26,5 +25,9 @@ export class DetailComponent implements OnInit {
       }
     );
     this.filmService.getFilmDetail(this.router.snapshot.params['id']);
+
+    const tag = document.createElement('script');
+    tag.src ='https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
   }
 }

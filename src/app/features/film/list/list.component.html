@@ -1,8 +1,14 @@
-<div class="list-group" *ngFor="let items of films">
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{items.titre}}</h5>
+<div class="card mb-3" style="max-width: 100%" *ngFor="let item of films">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img class="card-img" src="{{item.image}}" alt="">
     </div>
-    <p class="mb-1">{{items.description}}</p>
-  </a>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{item.titre}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <a routerLink="../detail/{{item.id}}" class="btn btn-primary">Detail</a>
+      </div>
+    </div>
+  </div>
 </div>

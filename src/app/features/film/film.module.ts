@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { FilmRoutingModule } from './film-routing.module';
 import { ListComponent } from './list/list.component';
-
+import { DetailComponent } from './detail/detail.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, DetailComponent],
   imports: [
     CommonModule,
-    FilmRoutingModule
+    FilmRoutingModule,
+    YouTubePlayerModule
   ]
 })
 export class FilmModule { }

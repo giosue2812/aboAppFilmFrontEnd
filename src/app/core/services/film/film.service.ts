@@ -45,7 +45,7 @@ export class FilmService {
       .get(environment.url+'/films/detail/'+id)
       .subscribe(
         (data:any) => {
-          this.filmDetail = data;
+          this.filmDetail = data || null;
           this.emitFilmDetailSubject();
         },
         (error) => {

@@ -1,4 +1,4 @@
-<div class="card mb-3">
+<div *ngIf="detail._films; else elseBlock" class="card mb-3" >
   <youtube-player class="text-center" videoId="{{detail._films.bande_annoce}}">
   </youtube-player>
   <div class="card-body">
@@ -8,3 +8,16 @@
     <p class="card-text" *ngIf="detail._films.realisateurs.nom">Realisateur : {{detail._films.realisateurs.nom}} {{detail._films.realisateurs.prenom}}</p>
   </div>
 </div>
+
+<ng-template #elseBlock>
+<div class="card mb-3">
+  <youtube-player class="text-center" videoId="{{detail.bande_annoce}}">
+  </youtube-player>
+  <div class="card-body">
+    <h5 class="card-title">{{detail.titre}}</h5>
+    <p class="card-text">Date de sortie : {{detail.date_sortie|date:'d-MM-yyyy'}}</p>
+    <p class="card-text" *ngIf="detail._acteurs">Casting : {{detail._acteurs.nom}} {{detail._acteurs.prenom}}</p>
+    <p class="card-text" *ngIf="detail.realisateurs.nom">Realisateur : {{detail.realisateurs.nom}} {{detail.realisateurs.prenom}}</p>
+  </div>
+</div>
+</ng-template>

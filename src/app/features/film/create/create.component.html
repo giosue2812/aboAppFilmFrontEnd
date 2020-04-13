@@ -1,0 +1,58 @@
+<form [formGroup]="filmForm">
+  <div>
+    <div class="form-group">
+      <h3>Ajouter un nouveau Film</h3>
+      <label>
+        Titre:
+        <input type="text" class="form-control" formControlName="titleName">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Description:
+        <textarea class="form-control" formControlName="descritpion"></textarea>
+      </label>
+    </div>
+
+    <div class="form-group">
+    <label>
+        Date De Sortie:
+        <input class="form-control" type="date" formControlName="dateDeSortie">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Realisateur:
+        <select class="form-control" formControlName="realisateur">
+          <option>test</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Casting:
+        <select class="form-control" formControlName="casting">
+          <option>test</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Image:
+        <input class="form-control" type="file" formControlName="image">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Bande Annonce:
+        <input class="form-control" type="text" formControlName="bandeAnnoce">
+      </label>
+    </div>
+  </div>
+  <button (click)="onSubmit()" type="submit" class="btn btn-primary">Enregister</button>
+</form>
